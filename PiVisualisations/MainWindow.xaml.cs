@@ -25,11 +25,9 @@ namespace PiVisualisations
         {
             InitializeComponent();
         }
-
         public void Draw()
         {
             Random myRNG = new Random();
-
             SolidColorBrush newColour = new SolidColorBrush(Color.FromRgb((byte)myRNG.Next(1, 255), (byte)myRNG.Next(1, 255), (byte)myRNG.Next(1, 255)));
             Rectangle myRect = new Rectangle
             {

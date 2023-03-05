@@ -40,5 +40,16 @@ namespace PiVisualisations.View.UserControls
             MainWindow window = Window.GetWindow(this) as MainWindow;
             window.Draw();
         }
+        private void Background_White_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow window = Window.GetWindow(this) as MainWindow;
+            window.Canvas.Background = new SolidColorBrush(Colors.White);
+        }
+
+        private void Background_Black_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow window = Window.GetWindow(this) as MainWindow;
+            window.Canvas.Background = new SolidColorBrush(Colors.Black);
+        }
     }
 }

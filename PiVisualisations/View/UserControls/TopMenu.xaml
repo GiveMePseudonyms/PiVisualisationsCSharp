@@ -16,8 +16,13 @@
                 <MenuItem Header="Refresh" Click="TopMenu_Refresh_Click"/>
                 <MenuItem Header="Exit" Click="TopMenu_Exit_Click"/>
             </MenuItem>
-            <MenuItem Header="Edit" FontSize="16"/>
-            <Button Content="Draw" Click="Button_Click" Focusable="False"/>
+            <MenuItem Header="Edit" FontSize="16">
+                <MenuItem Header="Background">
+                    <MenuItem Header="White" Click="Background_White_Click"/>
+                    <MenuItem Header="Black" Click="Background_Black_Click"/>
+                </MenuItem>
+            </MenuItem>
+                <Button Content="Draw" Click="Button_Click" Focusable="False"/>
         </Menu>
     </Grid>
 </UserControl>
