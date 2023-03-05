@@ -40,6 +40,7 @@ namespace PiVisualisations.View.UserControls
             MainWindow window = Window.GetWindow(this) as MainWindow;
             window.Draw();
         }
+
         private void Background_White_Click(object sender, RoutedEventArgs e)
         {
             MainWindow window = Window.GetWindow(this) as MainWindow;
@@ -50,6 +51,41 @@ namespace PiVisualisations.View.UserControls
         {
             MainWindow window = Window.GetWindow(this) as MainWindow;
             window.Canvas.Background = new SolidColorBrush(Colors.Black);
+        }
+        private void Background_Grey_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow window = Window.GetWindow(this) as MainWindow;
+            window.Canvas.Background = new SolidColorBrush(Colors.Gray);
+        }
+
+        private void Pixel_Click(object sender, RoutedEventArgs e)
+        {
+            return;
+        }
+
+        private void Turtle_Click(object sender, RoutedEventArgs e)
+        {
+            return;
+        }
+
+        private void Spiral_Click(object sender, RoutedEventArgs e)
+        {
+            return;
+        }
+
+        private void Waveform_Click(object sender, RoutedEventArgs e)
+        {
+            return;
+        }
+
+        private void Sandpile_Click(object sender, RoutedEventArgs e)
+        {
+            return;
+        }
+
+        private void Web_Click(object sender, RoutedEventArgs e)
+        {
+            return;
         }
     }
 }

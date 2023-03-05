@@ -25,6 +25,11 @@ namespace PiVisualisations
         {
             InitializeComponent();
         }
+
+        private void Show_Pixel_Options()
+        {
+
+        }
         public void Draw()
         {
             Random myRNG = new Random();

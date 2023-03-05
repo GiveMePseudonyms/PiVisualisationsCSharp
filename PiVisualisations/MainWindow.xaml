@@ -7,14 +7,44 @@
         xmlns:userControls="clr-namespace:PiVisualisations.View.UserControls"
         mc:Ignorable="d"
         Title="MainWindow" Height="1000" Width="1000">
-    <Grid>
+<Grid>
+        <!-- Build main window format-->
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="40"/>
             <RowDefinition/>
-            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+    
+        <!-- Rows to hold TopMenu and (options, canvas)-->
+        <Grid Grid.Row="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <userControls:TopMenu />
-        <Canvas Grid.Row="1" Name="Canvas" Background="DeepSkyBlue" Focusable="False"/>
+        <!-- Single column at top for TopMenu-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <!-- TopMenu goes into row 1 of master grid-->
+        <userControls:TopMenu Grid.Row="0"/>
     </Grid>
+
+    <!-- Second grid to split content between options and canvas-->
+    <Grid Grid.Row="1">
+        <Grid.ColumnDefinitions>
+            <!-- Options panel-->
+            <ColumnDefinition Width="150"/>
+            <!-- Canvas takes remaining room-->
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <!-- TODO: add options control-->
+
+        <!-- Canvas to draw onto-->
+        <Canvas Grid.Column="1" Name="Canvas" Background="Gray" Focusable="False"/>
+
+    </Grid>
+    
+</Grid>
 </Window>

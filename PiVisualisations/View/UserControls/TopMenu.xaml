@@ -20,7 +20,16 @@
                 <MenuItem Header="Background">
                     <MenuItem Header="White" Click="Background_White_Click"/>
                     <MenuItem Header="Black" Click="Background_Black_Click"/>
+                    <MenuItem Header="Grey" Click="Background_Grey_Click"/>
                 </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Select Visualiser" FontSize="16">
+                <MenuItem Header="Pixel" Click="Pixel_Click"/>
+                <MenuItem Header="Turtle" Click="Turtle_Click"/>
+                <MenuItem Header="Spiral" Click="Spiral_Click"/>
+                <MenuItem Header="Waveform" Click="Waveform_Click"/>
+                <MenuItem Header="Sandpile" Click="Sandpile_Click"/>
+                <MenuItem Header="Web" Click="Web_Click"/>
             </MenuItem>
                 <Button Content="Draw" Click="Button_Click" Focusable="False"/>
         </Menu>
