@@ -1,0 +1,117 @@
+﻿<UserControl x:Class="PiVisualisations.View.UserControls.Pixel_Options"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PiVisualisations.View.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="1000" d:DesignWidth="250"
+             xmlns:System="clr-namespace:System;assembly=mscorlib"
+             >
+    
+    <Grid>
+
+        <Grid.Resources>
+            <System:Double x:Key="FontSize">16</System:Double>
+        </Grid.Resources>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <Label Name="lblAnimate" Grid.Column="0" Grid.Row="0" 
+               Content="Animate" FontSize="{StaticResource FontSize}"/>
+        <CheckBox Name="ChkAnimate" Grid.Column="1" Grid.Row="0" 
+                     VerticalContentAlignment="Center"/>
+
+        <Label Name="lblTarget" Grid.Column="0" Grid.Row="1" 
+               Content="Target" FontSize="{StaticResource FontSize}"/>
+        <CheckBox Name="ChkTarget" Grid.Column="1" Grid.Row="1"
+                     VerticalAlignment="Center"/>
+
+        <Label Name="lblSizeDigit" Grid.Column="0" Grid.Row="2"
+               Content="Size = Digit" FontSize="{StaticResource FontSize}"/>
+        <CheckBox Name="ChkSizeDigit" Grid.Column="1" Grid.Row="2"
+                     VerticalAlignment="Center"/>
+
+        <Label Name="lblScaleFactor" Grid.Column="0" Grid.Row="3"
+               Content="Scale factor" FontSize="{StaticResource FontSize}"/>
+        <ComboBox Name="cbScaleFactor" Grid.Column="1" Grid.Row="3">
+            <ComboBoxItem Content="0.25"/>
+            <ComboBoxItem Content="0.5"/>
+            <ComboBoxItem Content="0.75"/>
+            <ComboBoxItem Content="1"/>
+        </ComboBox>
+
+        <Label Name="lblScaleOverTime" Grid.Column="0" Grid.Row="4"
+                Content="Scale size over time" FontSize="{StaticResource FontSize}"/>
+        <CheckBox Name="chkScaleOverTime" Grid.Column="1" Grid.Row="4"
+                  VerticalAlignment="Center"/>
+
+        <Label Name="lblHighlight123s" Grid.Column="0" Grid.Row="5"
+               Content="Highlight 123s" FontSize="{StaticResource FontSize}"/>
+        <CheckBox Name="chkHighlight123s" Grid.Column="1" Grid.Row="5"
+                  VerticalAlignment="Center"/>
+
+        <Label Name="lblOffsetSameAsPointSize" Grid.Column="0" Grid.Row="6"
+               Content="Offset same as point size" FontSize="{StaticResource FontSize}"/>
+        <CheckBox Name="chkOffsetSameAsPointSize" Grid.Column="1" Grid.Row="6"
+                VerticalAlignment="Center"/>
+
+        <Label Name="lblPointSize" Grid.Column="0" Grid.Row="7"
+               Content="Point size" FontSize="{StaticResource FontSize}"/>
+        <ComboBox Name="cbPointSize" Grid.Column="1" Grid.Row="7">
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
+            <ComboBoxItem Content="4"/>
+            <ComboBoxItem Content="5"/>
+            <ComboBoxItem Content="6"/>
+            <ComboBoxItem Content="7"/>
+            <ComboBoxItem Content="8"/>
+            <ComboBoxItem Content="9"/>
+            <ComboBoxItem Content="10"/>
+        </ComboBox>
+
+        <Label Name="lblHighlightColour" Grid.Column="0" Grid.Row="8"
+               Content="Highlight Colour" FontSize="{StaticResource FontSize}"/>
+        <ComboBox Name="cbHighlightColour" Grid.Column="1" Grid.Row="8">
+            <ComboBoxItem Content="Red"/>
+            <ComboBoxItem Content="Green"/>
+            <ComboBoxItem Content="Blue"/>
+        </ComboBox>
+
+        <Label Name="lblUseColourDictionary" Grid.Column="0" Grid.Row="9"
+               Content="Use Colour Dictionary" FontSize="{StaticResource FontSize}"/>
+        <CheckBox Name="chkUseColourDictionary" Grid.Column="1" Grid.Row="9"
+                  VerticalAlignment="Center"/>
+
+        <Label Name="lblPointColour" Grid.Column="0" Grid.Row="10"
+               Content="Point Colour" FontSize="{StaticResource FontSize}"/>
+        <ComboBox Name="cbPointColour" Grid.Column="1" Grid.Row="10">
+            <ComboBoxItem Content="Organic"/>
+            <ComboBoxItem Content="Starfield"/>
+        </ComboBox>
+
+        <Button Name="btnTest" Content="Test" Grid.Column="0" Grid.Row="11"
+                Click="TestClick"/>
+
+    </Grid>
+</UserControl>

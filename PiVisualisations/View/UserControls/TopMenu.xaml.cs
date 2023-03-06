@@ -35,7 +35,7 @@ namespace PiVisualisations.View.UserControls
             MessageBox.Show("Refresh clicked");
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Draw_Click(object sender, RoutedEventArgs e)
         {
             MainWindow window = Window.GetWindow(this) as MainWindow;
             window.Draw();
@@ -86,6 +86,11 @@ namespace PiVisualisations.View.UserControls
         private void Web_Click(object sender, RoutedEventArgs e)
         {
             return;
+        }
+
+        private void test_click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -6,6 +6,8 @@
              xmlns:local="clr-namespace:PiVisualisations.View.UserControls"
              mc:Ignorable="d" 
              Height="30" d:DesignWidth="800">
+    
+    <!-- Grid to hold all of the menu items-->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -31,7 +33,7 @@
                 <MenuItem Header="Sandpile" Click="Sandpile_Click"/>
                 <MenuItem Header="Web" Click="Web_Click"/>
             </MenuItem>
-                <Button Content="Draw" Click="Button_Click" Focusable="False"/>
+                <Button Content="Draw" Click="Draw_Click" Focusable="False"/>
         </Menu>
     </Grid>
 </UserControl>
