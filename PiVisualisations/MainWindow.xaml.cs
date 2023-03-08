@@ -33,7 +33,6 @@ namespace PiVisualisations
         }
         public void Draw()
         {
-
             double centreX = 500;
             double centreY = 500;
 
@@ -107,22 +106,22 @@ namespace PiVisualisations
                             yIndex += offset;
                             direction = 'r';
                             break;
-                    }
-                    rectX = centreX + xIndex;
-                    rectY = centreY + yIndex;
+                }
+                rectX = centreX + xIndex;
+                rectY = centreY + yIndex;
 
-                    SolidColorBrush newColour = new SolidColorBrush(Color.FromRgb((byte)myRNG.Next(1, 255), (byte)myRNG.Next(1, 255), (byte)myRNG.Next(1, 255)));
-                    Rectangle myRect = new Rectangle
-                    {
-                        Width = rectWidth,
-                        Height = rectHeight,
-                        Fill = newColour,
-                    };
-                    Canvas.SetLeft(myRect, rectX);
-                    Canvas.SetTop(myRect, rectY);
-                    Canvas.Children.Add(myRect);
+                SolidColorBrush newColour = new SolidColorBrush(Color.FromRgb((byte)myRNG.Next(1, 255), (byte)myRNG.Next(1, 255), (byte)myRNG.Next(1, 255)));
+                Rectangle myRect = new Rectangle
+                {
+                    Width = rectWidth,
+                    Height = rectHeight,
+                    Fill = newColour,
+                };
+                Canvas.SetLeft(myRect, rectX);
+                Canvas.SetTop(myRect, rectY - (rectWidth /2));
+                Canvas.Children.Add(myRect);
 
-                    MessageBox.Show("Tick");
+                MessageBox.Show("Tick");
                 }
 
             }
