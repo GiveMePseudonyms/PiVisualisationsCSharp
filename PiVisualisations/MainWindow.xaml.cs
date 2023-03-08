@@ -34,45 +34,44 @@ namespace PiVisualisations
         public void Draw()
         {
 
-            double centre_x = 500;
-            double centre_y = 500;
+            double centreX = 500;
+            double centreY = 500;
 
-            double rect_x;
-            double rect_y;
-            int rect_width = 10;
-            int rect_height = 10;
-
+            double rectX;
+            double rectY;
+            int rectWidth = 20;
+            int rectHeight = 20;
 
             Random myRNG = new Random();
 
-            int steps_taken = 0;
-            int step_target = 1;
+            int stepsTaken = 0;
+            int stepTarget = 1;
             char direction = 'r';
             int timesTargetHit = 0;
 
-            double x_index = 0;
-            double y_index = 0;
+            double xIndex = 0;
+            double yIndex = 0;
 
-            int offset = 5;
+            int offset = 10;
 
-            for(int i = 0 ; i <= 100; i++)
+            for(int i = 0 ; i <= 1000; i++)
             {
-                if (steps_taken != step_target)
+                if (stepsTaken != stepTarget)
                 {
-                    steps_taken += 1;
+                    stepsTaken += 1;
                     switch (direction)
                     {
                         case 'r':
-                            x_index += offset;
+                            xIndex += offset;
                             break;
                         case 'u':
-                            y_index -= offset;
+                            yIndex -= offset;
                             break;
                         case 'l':
-                            x_index -= offset;
+                            xIndex -= offset;
                             break;
                         case 'd':
-                            y_index += offset;
+                            yIndex += offset;
                             break;
                     }
                 }
@@ -81,47 +80,49 @@ namespace PiVisualisations
                     if (timesTargetHit != 2)
                     {
                         timesTargetHit += 1;
-                        steps_taken = 0;
+                        stepsTaken = 0;
                     }
                     else if (timesTargetHit == 2)
                     {
-                        steps_taken = 0;
-                        step_target += 1;
+                        stepsTaken = 0;
+                        stepTarget += 1;
                         timesTargetHit = 1;
                     }
+
                     switch (direction)
                     {
                         case 'r':
-                            x_index += offset;
+                            xIndex += offset;
                             direction = 'u';
                             break;
                         case 'u':
-                            y_index -= offset;
+                            yIndex -= offset;
                             direction = 'l';
                             break;
                         case 'l':
-                            x_index -= offset;
+                            xIndex -= offset;
                             direction = 'd';
                             break;
                         case 'd':
-                            y_index += offset;
+                            yIndex += offset;
                             direction = 'r';
                             break;
                     }
-                    rect_x = centre_x + x_index;
-                    
-                    rect_y = centre_y + y_index;
+                    rectX = centreX + xIndex;
+                    rectY = centreY + yIndex;
 
                     SolidColorBrush newColour = new SolidColorBrush(Color.FromRgb((byte)myRNG.Next(1, 255), (byte)myRNG.Next(1, 255), (byte)myRNG.Next(1, 255)));
                     Rectangle myRect = new Rectangle
                     {
-                        Width = rect_width,
-                        Height = rect_height,
+                        Width = rectWidth,
+                        Height = rectHeight,
                         Fill = newColour,
                     };
-                    Canvas.SetLeft(myRect, rect_x);
-                    Canvas.SetTop(myRect, rect_y);
+                    Canvas.SetLeft(myRect, rectX);
+                    Canvas.SetTop(myRect, rectY);
                     Canvas.Children.Add(myRect);
+
+                    MessageBox.Show("Tick");
                 }
 
             }
