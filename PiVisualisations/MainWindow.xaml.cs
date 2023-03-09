@@ -41,6 +41,10 @@ namespace PiVisualisations
             options.Add("rectHeight", "1");
             PIxelVisualiser pixelVisualiser = new PIxelVisualiser(Canvas, options);
 
+            WriteableBitmap bitmap = BitmapFactory.New((int)Canvas.ActualWidth, (int)Canvas.ActualHeight);
+            bitmap.Clear(Colors.Black);
+            image.Source = bitmap;
+
             pixelVisualiser.Draw();
         }
     }
