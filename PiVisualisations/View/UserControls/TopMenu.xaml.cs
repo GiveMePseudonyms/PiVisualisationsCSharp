@@ -32,28 +32,33 @@ namespace PiVisualisations.View.UserControls
 
         private void TopMenu_Refresh_Click(object sender, RoutedEventArgs e)
         {
+            //testing
             MessageBox.Show("Refresh clicked");
         }
 
         private void Draw_Click(object sender, RoutedEventArgs e)
         {
+            // get the window as window obj so we can invoke commands in it.
             MainWindow window = Window.GetWindow(this) as MainWindow;
             window.Draw();
         }
 
         private void Background_White_Click(object sender, RoutedEventArgs e)
         {
+            // get the window as window obj so we can invoke commands in it.
             MainWindow window = Window.GetWindow(this) as MainWindow;
             window.Canvas.Background = new SolidColorBrush(Colors.White);
         }
 
         private void Background_Black_Click(object sender, RoutedEventArgs e)
         {
+            // get the window as window obj so we can invoke commands in it.
             MainWindow window = Window.GetWindow(this) as MainWindow;
             window.Canvas.Background = new SolidColorBrush(Colors.Black);
         }
         private void Background_Grey_Click(object sender, RoutedEventArgs e)
         {
+            // get the window as window obj so we can invoke commands in it.
             MainWindow window = Window.GetWindow(this) as MainWindow;
             window.Canvas.Background = new SolidColorBrush(Colors.Gray);
         }

@@ -24,16 +24,24 @@ namespace PiVisualisations.Visualisers
 
         public void Draw()
         {
+            //might be better to store this in the settings dictionary and pass it in via
+            //the constructor, allowing user to choose canvas size.
             double centreX = this.canvas.ActualWidth / 2;
             double centreY = this.canvas.ActualHeight / 2;
 
+            //starting points for rects.
             double rectX = centreX;
             double rectY = centreY;
 
+            //how much we move the rect coords (should be equal to rect size to prevent overlap).
             int offset = Convert.ToInt16(this.options["rectWidth"]);
 
+            //used for random colour generation right now. Switch to colour dictionary based on digit of pi later.
             Random myRNG = new Random();
 
+            /*
+             * Based on the current direction of travel, take a step by offset amount
+             */
             int stepsTaken = 0;
             char direction = 'r';
 
@@ -62,10 +70,14 @@ namespace PiVisualisations.Visualisers
                     }
                     stepsTaken++;
 
+
+                    //define colour and draw rect using graphics obj
                     SolidColorBrush newColour = new SolidColorBrush(Color.FromRgb((byte)myRNG.Next(1, 255), (byte)myRNG.Next(1, 255), (byte)myRNG.Next(1, 255)));
                     this.graphics.Draw(newColour, rectX, rectY);
                 }
 
+                //once we've done the above for the entire side length, change direction
+                //if we're facing up or right, increase side length target by 1
                 switch(direction)
                 {
                     case 'r':

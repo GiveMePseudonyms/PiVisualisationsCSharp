@@ -32,6 +32,7 @@ namespace PiVisualisations
                 Fill = brush
             };
 
+            //set coords of rect and then draw it
             Canvas.SetLeft(rect, xPos);
             Canvas.SetTop(rect, yPos);
             canvas.Children.Add(rect);

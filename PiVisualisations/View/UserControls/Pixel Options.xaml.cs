@@ -27,6 +27,7 @@ namespace PiVisualisations.View.UserControls
 
         private void TestClick(object sender, RoutedEventArgs e)
         {
+            //for testing purposes.
             string selected = cbPointSize.Text;
             MessageBox.Show($"Clicked {selected}");
         }

@@ -30,17 +30,18 @@ namespace PiVisualisations
 
         private void Show_Pixel_Options()
         {
-
+            throw new NotImplementedException();
         }
         public void Draw()
         {
+            //Define a settings dictionary to be passed onto the visualiser based upon the options
+            //selected by the user
             Dictionary<string, string> options = new Dictionary<string, string>();
             options.Add("rectWidth", "1");
             options.Add("rectHeight", "1");
             PIxelVisualiser pixelVisualiser = new PIxelVisualiser(Canvas, options);
 
             pixelVisualiser.Draw();
-
         }
     }
 }
