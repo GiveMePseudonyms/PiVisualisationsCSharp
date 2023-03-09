@@ -7,31 +7,39 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Markup.Localizer;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 
 namespace PiVisualisations.Visualisers
 {
     public class PIxelVisualiser
     {
         Dictionary<string, string> options;
-        Canvas canvas;
-        Graphics graphics;
-        public PIxelVisualiser(Canvas canvas, Dictionary<string, string> options)
+        Image image;
+        BitmapWriter bitmapWriter;
+        public PIxelVisualiser(Image image, Dictionary<string, string> options)
         {
             this.options = options;
-            this.canvas = canvas;
-            this.graphics = new Graphics(canvas, options);
+            this.image = image;
+            //graphics = new Graphics(canvas, options);
+
+            this.bitmapWriter = new BitmapWriter(image, this.options);
         }
 
         public void Draw()
         {
+            
             //might be better to store this in the settings dictionary and pass it in via
             //the constructor, allowing user to choose canvas size.
-            double centreX = this.canvas.ActualWidth / 2;
-            double centreY = this.canvas.ActualHeight / 2;
+            int centreX = (int)this.image.ActualWidth / 2;
+            int centreY = (int)this.image.ActualHeight / 2;
 
             //starting points for rects.
-            double rectX = centreX;
-            double rectY = centreY;
+            int rectX = centreX;
+            int rectY = centreY;
+
+            // rect W/H
+            int rectWidth = Convert.ToInt16(this.options["rectWidth"]);
+            int rectHeight = Convert.ToInt16(this.options["rectHeight"]);
 
             //how much we move the rect coords (should be equal to rect size to prevent overlap).
             int offset = Convert.ToInt16(this.options["rectWidth"]);
@@ -47,9 +55,7 @@ namespace PiVisualisations.Visualisers
 
             int stepTarget = 1;
 
-            int totalSteps = 0;
-
-            for (totalSteps = 0; totalSteps <= 400; totalSteps++)
+            for (int totalSteps = 0; totalSteps <= 50; totalSteps++)
             {
                 for (int x =  0; x < stepTarget; x++)
                 {
@@ -70,10 +76,9 @@ namespace PiVisualisations.Visualisers
                     }
                     stepsTaken++;
 
-
                     //define colour and draw rect using graphics obj
-                    SolidColorBrush newColour = new SolidColorBrush(Color.FromRgb((byte)myRNG.Next(1, 255), (byte)myRNG.Next(1, 255), (byte)myRNG.Next(1, 255)));
-                    this.graphics.Draw(newColour, rectX, rectY);
+                    Color theColour = Color.FromRgb((byte)myRNG.Next(1, 255), (byte)myRNG.Next(1, 255), (byte)myRNG.Next(1, 255));
+                    bitmapWriter.Draw(rectX, rectY, rectWidth, rectHeight, theColour);
                 }
 
                 //once we've done the above for the entire side length, change direction
@@ -97,6 +102,7 @@ namespace PiVisualisations.Visualisers
                 }
                 stepsTaken = 0;
             }
+            bitmapWriter.Refresh();
         }
     }
 }

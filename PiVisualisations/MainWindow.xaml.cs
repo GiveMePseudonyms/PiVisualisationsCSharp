@@ -37,14 +37,12 @@ namespace PiVisualisations
             //Define a settings dictionary to be passed onto the visualiser based upon the options
             //selected by the user
             Dictionary<string, string> options = new Dictionary<string, string>();
-            options.Add("rectWidth", "1");
-            options.Add("rectHeight", "1");
-            PIxelVisualiser pixelVisualiser = new PIxelVisualiser(Canvas, options);
-
-            WriteableBitmap bitmap = BitmapFactory.New((int)Canvas.ActualWidth, (int)Canvas.ActualHeight);
-            bitmap.Clear(Colors.Black);
-            image.Source = bitmap;
-
+            options.Add("canvasWidth", image.ActualWidth.ToString());
+            options.Add("canvasHeight", image.ActualHeight.ToString());
+            options.Add("rectWidth", "2");
+            options.Add("rectHeight", "2");
+            
+            PIxelVisualiser pixelVisualiser = new PIxelVisualiser(image, options);
             pixelVisualiser.Draw();
         }
     }

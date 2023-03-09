@@ -37,8 +37,6 @@ namespace PiVisualisations
             Canvas.SetLeft(rect, xPos);
             Canvas.SetTop(rect, yPos);
             canvas.Children.Add(rect);
-            
-            
         }
     }
 }

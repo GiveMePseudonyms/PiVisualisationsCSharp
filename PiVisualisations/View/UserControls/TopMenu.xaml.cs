@@ -47,20 +47,20 @@ namespace PiVisualisations.View.UserControls
         {
             // get the window as window obj so we can invoke commands in it.
             MainWindow window = Window.GetWindow(this) as MainWindow;
-            window.Canvas.Background = new SolidColorBrush(Colors.White);
+            //window.Canvas.Background = new SolidColorBrush(Colors.White);
         }
 
         private void Background_Black_Click(object sender, RoutedEventArgs e)
         {
             // get the window as window obj so we can invoke commands in it.
             MainWindow window = Window.GetWindow(this) as MainWindow;
-            window.Canvas.Background = new SolidColorBrush(Colors.Black);
+            //window.Canvas.Background = new SolidColorBrush(Colors.Black);
         }
         private void Background_Grey_Click(object sender, RoutedEventArgs e)
         {
             // get the window as window obj so we can invoke commands in it.
             MainWindow window = Window.GetWindow(this) as MainWindow;
-            window.Canvas.Background = new SolidColorBrush(Colors.Gray);
+            //window.Canvas.Background = new SolidColorBrush(Colors.Gray);
         }
 
         private void Pixel_Click(object sender, RoutedEventArgs e)

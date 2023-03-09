@@ -35,17 +35,16 @@
             <Grid.ColumnDefinitions>
                 <!-- Options panel-->
                 <ColumnDefinition Width="250"/>
-                <!-- Canvas takes remaining room-->
+                <!-- image takes remaining room-->
                 <ColumnDefinition/>
-                <ColumnDefinition/>
+        
             </Grid.ColumnDefinitions>
 
             <!-- TODO: add options control-->
             <userControls:OptionsControl/>
 
-            <!-- Canvas to draw onto-->
-            <Image Name="image" Grid.Column="2"/>
-            <Canvas Grid.Column="1" Name="Canvas" Background="Gray" Focusable="False"/>
+            <!-- image to draw onto-->
+            <Image Name="image" Grid.Column="1"/>
         </Grid>
 
     </Grid>
