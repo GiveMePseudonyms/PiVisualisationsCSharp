@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Markup.Localizer;
 using System.Windows.Media;
 
 namespace PiVisualisations.Visualisers
@@ -29,22 +30,20 @@ namespace PiVisualisations.Visualisers
             double rectX = centreX;
             double rectY = centreY;
 
-            int rectWidth = Convert.ToInt16(this.options["rectWidth"]);
-            int rectHeight = Convert.ToInt16(this.options["rectHeight"]);
+            int offset = Convert.ToInt16(this.options["rectWidth"]);
 
             Random myRNG = new Random();
 
-            int stepsTaken = 1;
+            int stepsTaken = 0;
             char direction = 'r';
-            int timesTargetHit = 0;
 
-            int edgeSize = 2;
+            int stepTarget = 1;
 
-            int offset = rectWidth;
+            int totalSteps = 0;
 
-            for (int i = 0; i < 100; i++)
+            for (totalSteps = 0; totalSteps <= 400; totalSteps++)
             {
-                for (int x = 0; x < edgeSize; x++)
+                for (int x =  0; x < stepTarget; x++)
                 {
                     switch (direction)
                     {
@@ -61,44 +60,30 @@ namespace PiVisualisations.Visualisers
                             rectY += offset;
                             break;
                     }
+                    stepsTaken++;
 
                     SolidColorBrush newColour = new SolidColorBrush(Color.FromRgb((byte)myRNG.Next(1, 255), (byte)myRNG.Next(1, 255), (byte)myRNG.Next(1, 255)));
                     this.graphics.Draw(newColour, rectX, rectY);
-
-                    stepsTaken += 1;
-
-                    if (stepsTaken == edgeSize)
-                    {
-                        switch (direction)
-                        {
-                            case 'r':
-                                direction = 'u';
-                                break;
-                            case 'u':
-                                direction = 'l';
-                                break;
-                            case 'l':
-                                direction = 'd';
-                                break;
-                            case 'd':
-                                direction = 'r';
-                                break;
-                        }
-                        timesTargetHit += 1;
-                        stepsTaken = 1;
-                    }
-
-                    if (timesTargetHit == edgeSize + 1)
-                    {
-                        edgeSize += 1;
-                        timesTargetHit = 0;
-                    }
-
-                    MessageBox.Show("Tick");
-
-                    MessageBox.Show($"Steps taken {stepsTaken}, edge size {edgeSize}, target hit {timesTargetHit}");
-
                 }
+
+                switch(direction)
+                {
+                    case 'r':
+                        direction = 'u';
+                        break;
+                    case 'u':
+                        direction = 'l';
+                        stepTarget++;
+                        break;
+                    case 'l':
+                        direction = 'd';
+                        break;
+                    case 'd':
+                        direction = 'r';
+                        stepTarget++;
+                        break;
+                }
+                stepsTaken = 0;
             }
         }
     }

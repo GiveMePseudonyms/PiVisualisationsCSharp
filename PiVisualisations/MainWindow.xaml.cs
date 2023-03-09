@@ -35,8 +35,8 @@ namespace PiVisualisations
         public void Draw()
         {
             Dictionary<string, string> options = new Dictionary<string, string>();
-            options.Add("rectWidth", "20");
-            options.Add("rectHeight", "20");
+            options.Add("rectWidth", "1");
+            options.Add("rectHeight", "1");
             PIxelVisualiser pixelVisualiser = new PIxelVisualiser(Canvas, options);
 
             pixelVisualiser.Draw();
