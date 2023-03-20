@@ -55,7 +55,7 @@ namespace PiVisualisations.Visualisers
 
             int stepTarget = 1;
 
-            for (int totalSteps = 0; totalSteps <= 50; totalSteps++)
+            for (int totalSteps = 0; totalSteps <= 100; totalSteps++)
             {
                 for (int x =  0; x < stepTarget; x++)
                 {

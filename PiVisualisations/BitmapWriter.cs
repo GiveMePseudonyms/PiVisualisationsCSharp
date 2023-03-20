@@ -19,10 +19,8 @@ namespace PiVisualisations
         {
             this.image = image;
             this.options = options;
-
+            
             bitmap = BitmapFactory.New((int)this.image.ActualWidth, (int)this.image.ActualHeight);
-            image.Source = bitmap;
-            bitmap.Clear(Colors.Green);
         }
 
         public void Draw(int xPos, int Ypos, int width, int height, Color colour)
@@ -32,21 +30,12 @@ namespace PiVisualisations
             int x2 = x1 + width;
             int y2 = y1 + height;
 
-            bitmap.DrawRectangle(x1, y1, x2, y2, colour);
-
-            image.InvalidateVisual();
-
-            //MessageBox.Show($"drawn x1:{x1}, x2:{x2}, y1:{y1}, y2:{y2}");
-
-
+            bitmap.FillRectangle(x1, y1, x2, y2, colour);
         }
 
         public void Refresh()
         {
-            bitmap.Lock();
-            bitmap.AddDirtyRect(new Int32Rect(0, 0, bitmap.PixelWidth, bitmap.PixelHeight));
-            bitmap.Unlock();
-
+            image.Source = bitmap;
             image.InvalidateVisual();
         }
     }

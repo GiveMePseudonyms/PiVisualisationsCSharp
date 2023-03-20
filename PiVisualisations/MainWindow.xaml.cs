@@ -15,6 +15,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Timers;
+using System.Windows.Interop;
+using System.Threading;
 
 namespace PiVisualisations
 {
@@ -39,10 +42,11 @@ namespace PiVisualisations
             Dictionary<string, string> options = new Dictionary<string, string>();
             options.Add("canvasWidth", image.ActualWidth.ToString());
             options.Add("canvasHeight", image.ActualHeight.ToString());
-            options.Add("rectWidth", "2");
-            options.Add("rectHeight", "2");
+            options.Add("rectWidth", "12");
+            options.Add("rectHeight", "12");
             
             PIxelVisualiser pixelVisualiser = new PIxelVisualiser(image, options);
+            
             pixelVisualiser.Draw();
         }
     }
