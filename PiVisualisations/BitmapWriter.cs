@@ -18,6 +18,7 @@ namespace PiVisualisations
             
             
             bitmap = BitmapFactory.New((int)this.image.ActualWidth, (int)this.image.ActualHeight);
+            image.Source = bitmap;
             //bitmap = new WriteableBitmap(1, 1, 10, 10, PixelFormats.Pbgra32, null);
         }
 
@@ -50,11 +51,10 @@ namespace PiVisualisations
             */
         }
 
-
-        public void Refresh()
+        internal void Refresh()
         {
-            image.InvalidateVisual();
             image.Source = bitmap;
         }
+
     }
 }

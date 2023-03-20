@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace PiVisualisations.Visualisers
 {
@@ -72,6 +73,7 @@ namespace PiVisualisations.Visualisers
                     //define colour and draw rect using graphics obj
                     Color theColour = Color.FromRgb((byte)myRNG.Next(1, 255), (byte)myRNG.Next(1, 255), (byte)myRNG.Next(1, 255));
                     bitmapWriter.Draw(rectX, rectY, rectWidth, rectHeight, theColour);
+                    bitmapWriter.Refresh();
                 }
 
                 //once we've done the above for the entire side length, change direction
@@ -95,7 +97,6 @@ namespace PiVisualisations.Visualisers
                 }
                 stepsTaken = 0;
             }
-            bitmapWriter.Refresh();
         }
     }
 }
