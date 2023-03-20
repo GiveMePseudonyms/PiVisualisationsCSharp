@@ -1,22 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Markup.Localizer;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
 
 namespace PiVisualisations.Visualisers
 {
-    public class PIxelVisualiser
+    public class PixelVisualiser
     {
         Dictionary<string, string> options;
         Image image;
         BitmapWriter bitmapWriter;
-        public PIxelVisualiser(Image image, Dictionary<string, string> options)
+        public PixelVisualiser(Image image, Dictionary<string, string> options)
         {
             this.options = options;
             this.image = image;
@@ -27,7 +21,6 @@ namespace PiVisualisations.Visualisers
 
         public void Draw()
         {
-            
             //might be better to store this in the settings dictionary and pass it in via
             //the constructor, allowing user to choose canvas size.
             int centreX = (int)this.image.ActualWidth / 2;

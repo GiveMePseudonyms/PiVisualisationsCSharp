@@ -69,7 +69,7 @@
     <Compile Include="View\UserControls\TopMenu.xaml.cs">
       <DependentUpon>TopMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Visualisers\PIxelVisualiser.cs" />
+    <Compile Include="Visualisers\PixelVisualiser.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

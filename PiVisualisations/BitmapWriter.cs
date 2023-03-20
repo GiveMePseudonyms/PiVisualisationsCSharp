@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using System.Windows.Media;
-using System.Windows;
 
 namespace PiVisualisations
 {
@@ -20,23 +16,45 @@ namespace PiVisualisations
             this.image = image;
             this.options = options;
             
+            
             bitmap = BitmapFactory.New((int)this.image.ActualWidth, (int)this.image.ActualHeight);
+            //bitmap = new WriteableBitmap(1, 1, 10, 10, PixelFormats.Pbgra32, null);
         }
 
         public void Draw(int xPos, int Ypos, int width, int height, Color colour)
         {
+            /*
             int x1 = xPos;
             int y1 = Ypos;
             int x2 = x1 + width;
             int y2 = y1 + height;
+            */
 
-            bitmap.FillRectangle(x1, y1, x2, y2, colour);
+            int x1 = 10;
+            int x2 = 100;
+            int y1 = 10;
+            int y2 = 100;
+
+            bitmap.DrawRectangle(x1, y1, x2, y2, colour);
+
+            /*
+            bitmap.Lock();
+            for (int column = x1; column < x2; column++)
+            {
+                for (int row = y1; row < y2; row++)
+                {
+                    bitmap.SetPixel(column, row, colour);
+                }
+            }
+            bitmap.Unlock();
+            */
         }
+
 
         public void Refresh()
         {
-            image.Source = bitmap;
             image.InvalidateVisual();
+            image.Source = bitmap;
         }
     }
 }
