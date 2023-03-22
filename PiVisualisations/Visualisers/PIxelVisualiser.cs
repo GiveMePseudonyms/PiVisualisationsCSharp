@@ -1,13 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Markup.Localizer;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
 
 namespace PiVisualisations.Visualisers
 {
@@ -20,7 +14,6 @@ namespace PiVisualisations.Visualisers
         {
             this.options = options;
             this.image = image;
-            //graphics = new Graphics(canvas, options);
 
             this.bitmapWriter = new BitmapWriter(image, this.options);
         }
@@ -102,7 +95,7 @@ namespace PiVisualisations.Visualisers
                 }
                 stepsTaken = 0;
             }
-            bitmapWriter.Refresh();
+            image.Source = bitmapWriter.GetWriteableBitmap();
         }
     }
 }

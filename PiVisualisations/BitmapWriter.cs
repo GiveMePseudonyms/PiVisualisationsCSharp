@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using System.Windows.Media;
-using System.Windows;
 
 namespace PiVisualisations
 {
@@ -33,10 +28,9 @@ namespace PiVisualisations
             bitmap.FillRectangle(x1, y1, x2, y2, colour);
         }
 
-        public void Refresh()
+        public WriteableBitmap GetWriteableBitmap()
         {
-            image.Source = bitmap;
-            image.InvalidateVisual();
+            return bitmap;
         }
     }
 }
